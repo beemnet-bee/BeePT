@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'><style>.hexagon{fill:%23f1f5f9;stroke:%230891b2}.letter{fill:%230891b2}@media (prefers-color-scheme:dark){.hexagon{fill:%231e293b;stroke:%2322d3ee}.letter{fill:%2322d3ee}}</style><polygon class='hexagon' points='50,6 94,25 94,75 50,94 6,75 6,25' stroke-width='4'/><text class='letter' x='50' y='55' font-family='Ubuntu, sans-serif' font-size='50' font-weight='900' text-anchor='middle' dominant-baseline='middle'>B</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bee - Interactive Periodic Table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0"
+  }
+}
+</script>
+<style>
+    body {
+        font-family: 'Ubuntu', sans-serif;
+    }
+    /* Custom Scrollbar Styling */
+    :root {
+      --scrollbar-track: #e2e8f0; /* slate-200 */
+      --scrollbar-thumb: #64748b; /* slate-500 */
+      --scrollbar-thumb-hover: #475569; /* slate-600 */
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--scrollbar-track);
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-thumb);
+      border-radius: 20px;
+      border: 2px solid var(--scrollbar-track);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: var(--scrollbar-thumb-hover);
+    }
+  </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-100 text-slate-800">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
