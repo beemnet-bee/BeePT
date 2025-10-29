@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../contexts/ThemeContext';
+import React from 'react';
 
 // ... (parsing functions remain the same)
 const nobleGasConfig: Record<string, number[]> = {
@@ -66,12 +65,10 @@ interface AtomAnimationProps {
 
 export const AtomAnimation: React.FC<AtomAnimationProps> = ({ electron_configuration }) => {
   const shells = parseElectronConfigurationToShells(electron_configuration);
-  const themeContext = useContext(ThemeContext);
-  const theme = (themeContext as { theme: 'light' | 'dark' })?.theme || 'dark';
 
-  const nucleusColor = theme === 'dark' ? '#22d3ee' : '#0891b2';
-  const orbitColor = theme === 'dark' ? 'rgba(71, 85, 105, 0.7)' : 'rgba(203, 213, 225, 0.9)';
-  const electronColor = theme === 'dark' ? '#e2e8f0' : '#475569';
+  const nucleusColor = '#0891b2';
+  const orbitColor = 'rgba(203, 213, 225, 0.9)';
+  const electronColor = '#475569';
   
   return (
     <div className="relative w-full h-64 flex items-center justify-center">

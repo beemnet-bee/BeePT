@@ -9,7 +9,7 @@ interface ElementModalProps {
 }
 
 export const ElementModal: React.FC<ElementModalProps> = ({ element, onClose }) => {
-  const borderClass = CATEGORY_BORDER_COLORS[element.category] || 'border-slate-400 dark:border-slate-500';
+  const borderClass = CATEGORY_BORDER_COLORS[element.category] || 'border-slate-400';
 
   return (
     <div 
@@ -20,12 +20,12 @@ export const ElementModal: React.FC<ElementModalProps> = ({ element, onClose }) 
       aria-labelledby="element-name"
     >
       <div 
-        className="bg-slate-100/80 dark:bg-slate-800/80 rounded-lg shadow-2xl w-full max-w-3xl text-slate-800 dark:text-white border border-slate-300 dark:border-slate-700 transform animate-slide-up flex flex-col"
+        className="bg-slate-100/80 rounded-lg shadow-2xl w-full max-w-3xl text-slate-800 border border-slate-300 transform animate-slide-up flex flex-col"
         style={{ maxHeight: '90vh' }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className={`p-4 flex justify-between items-center bg-slate-200/50 dark:bg-slate-900/50 border-t-4 ${borderClass} flex-shrink-0`}>
+        <div className={`p-4 flex justify-between items-center bg-slate-200/50 border-t-4 ${borderClass} flex-shrink-0`}>
           <div className="flex items-baseline space-x-3">
             <h2 id="element-name" className="text-4xl font-bold">{element.symbol}</h2>
             <h3 className="text-2xl font-light">{element.name}</h3>
@@ -38,25 +38,25 @@ export const ElementModal: React.FC<ElementModalProps> = ({ element, onClose }) 
           {/* Left Column */}
           <div className="flex flex-col space-y-4">
              {/* Atomic Structure Animation */}
-            <div className="bg-slate-200/50 dark:bg-slate-900/50 p-4 rounded-md border border-slate-300 dark:border-slate-700 flex-grow flex flex-col">
-              <h4 className="font-bold text-cyan-600 dark:text-cyan-300 mb-4 text-center">Atomic Structure</h4>
+            <div className="bg-slate-200/50 p-4 rounded-md border border-slate-300 flex-grow flex flex-col">
+              <h4 className="font-bold text-cyan-600 mb-4 text-center">Atomic Structure</h4>
               <AtomAnimation electron_configuration={element.electron_configuration} />
             </div>
             {/* Subatomic Particles section */}
-            <div className="bg-slate-200/50 dark:bg-slate-900/50 p-4 rounded-md border border-slate-300 dark:border-slate-700">
-              <h4 className="font-bold text-cyan-600 dark:text-cyan-300 mb-2">Subatomic Particles</h4>
+            <div className="bg-slate-200/50 p-4 rounded-md border border-slate-300">
+              <h4 className="font-bold text-cyan-600 mb-2">Subatomic Particles</h4>
               <div className="grid grid-cols-3 gap-2 text-center">
                 <div>
                   <p className="text-2xl font-bold">{element.protons}</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Protons</p>
+                  <p className="text-xs text-slate-500">Protons</p>
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{element.neutrons}</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Neutrons</p>
+                  <p className="text-xs text-slate-500">Neutrons</p>
                 </div>
                 <div>
                   <p className="text-2xl font-bold">{element.electrons}</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Electrons</p>
+                  <p className="text-xs text-slate-500">Electrons</p>
                 </div>
               </div>
             </div>
@@ -75,40 +75,40 @@ export const ElementModal: React.FC<ElementModalProps> = ({ element, onClose }) 
             )}
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
-                <p className="text-slate-500 dark:text-slate-400">Category</p>
+                <p className="text-slate-500">Category</p>
                 <p className="capitalize font-semibold">{element.category}</p>
               </div>
               <div>
-                <p className="text-slate-500 dark:text-slate-400">Atomic Mass</p>
+                <p className="text-slate-500">Atomic Mass</p>
                 <p className="font-semibold">{element.atomic_mass} u</p>
               </div>
               {element.discovered_by && (
                 <div>
-                  <p className="text-slate-500 dark:text-slate-400">Discovered By</p>
+                  <p className="text-slate-500">Discovered By</p>
                   <p className="font-semibold">{element.discovered_by}</p>
                 </div>
               )}
               {element.year_discovered && (
                 <div>
-                  <p className="text-slate-500 dark:text-slate-400">Year Discovered</p>
+                  <p className="text-slate-500">Year Discovered</p>
                   <p className="font-semibold">{element.year_discovered}</p>
                 </div>
               )}
             </div>
-            <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{element.summary}</p>
+            <p className="text-slate-600 text-sm leading-relaxed">{element.summary}</p>
              {/* Electron Configuration section */}
-            <div className="bg-slate-200/50 dark:bg-slate-900/50 p-4 rounded-md border border-slate-300 dark:border-slate-700">
-              <h4 className="font-bold text-cyan-600 dark:text-cyan-300 mb-2">Electron Configuration</h4>
-              <p className="text-slate-700 dark:text-slate-200 text-sm font-mono break-words">{element.electron_configuration}</p>
+            <div className="bg-slate-200/50 p-4 rounded-md border border-slate-300">
+              <h4 className="font-bold text-cyan-600 mb-2">Electron Configuration</h4>
+              <p className="text-slate-700 text-sm font-mono break-words">{element.electron_configuration}</p>
             </div>
           </div>
         </div>
         
         {/* Footer */}
-        <div className="p-4 bg-slate-200/50 dark:bg-slate-900/50 text-right flex-shrink-0">
+        <div className="p-4 bg-slate-200/50 text-right flex-shrink-0">
            <button 
               onClick={onClose}
-              className="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-md font-semibold transition-colors text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-100 dark:focus:ring-offset-slate-800 focus:ring-cyan-400"
+              className="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-md font-semibold transition-colors text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-100 focus:ring-cyan-400"
               aria-label="Close modal"
             >
               Close

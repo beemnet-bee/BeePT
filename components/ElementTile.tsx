@@ -14,8 +14,8 @@ const hexagonStyle = {
 };
 
 export const ElementTile: React.FC<ElementTileProps> = ({ element, onClick, isDimmed, onHover }) => {
-  const colorClass = CATEGORY_COLORS[element.category] || 'bg-slate-200 text-slate-900 dark:bg-gradient-to-br dark:from-slate-600 dark:to-slate-700 dark:text-white';
-  const glowClass = CATEGORY_GLOW_COLORS[element.category] || 'shadow-slate-500/50 dark:shadow-slate-400/50';
+  const colorClass = CATEGORY_COLORS[element.category] || 'bg-slate-200 text-slate-900';
+  const glowClass = CATEGORY_GLOW_COLORS[element.category] || 'shadow-slate-500/50';
 
   const tileClasses = `
     relative w-[5.5rem] h-24 m-px flex flex-col items-center justify-center 
@@ -36,7 +36,7 @@ export const ElementTile: React.FC<ElementTileProps> = ({ element, onClick, isDi
       onMouseEnter={() => onHover(element)}
       onMouseLeave={() => onHover(null)}
     >
-      <div className="absolute inset-0 border border-slate-900/10 dark:border-slate-700/50" style={hexagonStyle}></div>
+      <div className="absolute inset-0 border border-slate-900/10" style={hexagonStyle}></div>
       
       <div className="absolute top-3 left-3 text-sm opacity-80">{element.number}</div>
       <div className="text-2xl z-10">{element.symbol}</div>

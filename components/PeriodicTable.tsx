@@ -46,13 +46,13 @@ export const PeriodicTable: React.FC<PeriodicTableProps> = ({ elements, onElemen
           
           {/* In-grid labels for Lanthanide and Actinide series */}
           <div 
-            className="flex items-center justify-center text-center text-sm font-bold text-cyan-600/80 dark:text-cyan-300/80 pr-4"
+            className="flex items-center justify-center text-center text-sm font-bold text-cyan-600/80 pr-4"
             style={{ gridRow: 9, gridColumn: '1 / span 3' }}
           >
             Lanthanide Series →
           </div>
           <div 
-            className="flex items-center justify-center text-center text-sm font-bold text-cyan-600/80 dark:text-cyan-300/80 pr-4"
+            className="flex items-center justify-center text-center text-sm font-bold text-cyan-600/80 pr-4"
             style={{ gridRow: 10, gridColumn: '1 / span 3' }}
           >
             Actinide Series →

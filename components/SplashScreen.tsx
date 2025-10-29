@@ -1,17 +1,14 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../contexts/ThemeContext';
+import React from 'react';
 
 const hexagonStyle = {
   clipPath: 'polygon(50% 6%, 94% 25%, 94% 75%, 50% 94%, 6% 75%, 6% 25%)',
 };
 
 export const SplashScreen: React.FC = () => {
-  const themeContext = useContext(ThemeContext);
-  const theme = (themeContext as { theme: 'light' | 'dark' })?.theme || 'dark';
-  const particleColor = theme === 'dark' ? 'rgba(34, 211, 238, 0.2)' : 'rgba(100, 116, 139, 0.2)';
+  const particleColor = 'rgba(100, 116, 139, 0.2)';
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-white select-none overflow-hidden">
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-100 text-slate-800 select-none overflow-hidden">
       {/* Animated Background */}
       <ul className="particles">
         {Array.from({ length: 10 }).map((_, i) => <li key={i}></li>)}
@@ -19,31 +16,31 @@ export const SplashScreen: React.FC = () => {
 
       <div className="relative flex flex-col items-center justify-center animate-fade-in-zoom z-10">
         <div 
-          className="w-32 h-36 bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900 relative"
+          className="w-32 h-36 bg-gradient-to-br from-slate-200 to-slate-300 relative"
           style={hexagonStyle}
         >
-          <div className="absolute inset-0 border-2 border-cyan-500/50 dark:border-cyan-400/50 animate-pulse-glow" style={hexagonStyle}></div>
+          <div className="absolute inset-0 border-2 border-cyan-500/50 animate-pulse-glow" style={hexagonStyle}></div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-6xl font-black text-cyan-600 dark:text-cyan-300">B</span>
+            <span className="text-6xl font-black text-cyan-600">B</span>
           </div>
 
           {/* Orbiting particles */}
           <div className="absolute w-full h-full animate-orbit" style={{ animationDelay: '0s' }}>
             <div className="absolute top-1/2 left-1/2 w-48 h-48 -mt-24 -ml-24 rounded-full">
-              <div className="absolute w-3 h-3 bg-cyan-500 dark:bg-cyan-300 rounded-full shadow-lg" style={{ top: '0', left: '50%', transform: 'translate(-50%, -50%)', boxShadow: '0 0 10px #06b6d4' }}></div>
+              <div className="absolute w-3 h-3 bg-cyan-500 rounded-full shadow-lg" style={{ top: '0', left: '50%', transform: 'translate(-50%, -50%)', boxShadow: '0 0 10px #06b6d4' }}></div>
             </div>
           </div>
            <div className="absolute w-full h-full animate-orbit-reverse" style={{ animationDelay: '-1.5s' }}>
             <div className="absolute top-1/2 left-1/2 w-40 h-40 -mt-20 -ml-20 rounded-full">
-               <div className="absolute w-2 h-2 bg-cyan-500 dark:bg-cyan-300 rounded-full shadow-lg" style={{ top: '50%', right: '0', transform: 'translate(50%, -50%)', boxShadow: '0 0 8px #06b6d4' }}></div>
+               <div className="absolute w-2 h-2 bg-cyan-500 rounded-full shadow-lg" style={{ top: '50%', right: '0', transform: 'translate(50%, -50%)', boxShadow: '0 0 8px #06b6d4' }}></div>
             </div>
           </div>
         </div>
         
-        <h1 className="text-2xl sm:text-3xl font-bold text-cyan-600 dark:text-cyan-300 tracking-wider mt-6 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+        <h1 className="text-2xl sm:text-3xl font-bold text-cyan-600 tracking-wider mt-6 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
           Bee - Interactive Periodic Table
         </h1>
-        <p className="mt-2 text-slate-500 dark:text-slate-400 animate-pulse-slow animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+        <p className="mt-2 text-slate-500 animate-pulse-slow animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
           Loading Elements...
         </p>
       </div>
@@ -94,8 +91,8 @@ export const SplashScreen: React.FC = () => {
           to { opacity: 1; transform: translateY(0); }
         }
         @keyframes pulse-glow {
-          0%, 100% { box-shadow: 0 0 15px 3px ${theme === 'dark' ? 'rgba(34, 211, 238, 0.4)' : 'rgba(8, 145, 178, 0.4)'}; }
-          50% { box-shadow: 0 0 30px 8px ${theme === 'dark' ? 'rgba(34, 211, 238, 0.6)' : 'rgba(8, 145, 178, 0.6)'}; }
+          0%, 100% { box-shadow: 0 0 15px 3px rgba(8, 145, 178, 0.4); }
+          50% { box-shadow: 0 0 30px 8px rgba(8, 145, 178, 0.6); }
         }
         @keyframes pulse-slow {
           0%, 100% { opacity: 0.7; }
